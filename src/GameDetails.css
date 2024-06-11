@@ -1,0 +1,61 @@
+.game-details-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  .countdown {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .number-selection {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .number-button {
+    font-size: 24px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .number-button:hover {
+    background-color: #eee;
+  }
+  
+  .selected {
+    background-color: #00bcd4 !important;
+    color: white !important;
+  }
+  
+  input[type="text"] {
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+  }
+  
+  button {
+    padding: 12px 24px;
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  button:hover {
+    background-color: #008ba3;
+  }
+  
