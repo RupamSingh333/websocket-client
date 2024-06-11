@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
 import styled from 'styled-components';
 
-const notificationSound = new Audio('/websocket-client/public/notification.mp3'); // Path to your notification sound file
-// notificationSound.play();
+const notificationSound = new Audio('../notification.mp3'); // Path to your notification sound file
+
 
 const socket = io('http://localhost:5000');
 
@@ -30,26 +30,15 @@ const MessageDetails = styled.div`
     color: #666;
 `;
 
-const playNotificationSound = () => {
-    notificationSound.play();
-};
 
 const Chat = () => {
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
     const [typingUser, setTypingUser] = useState('');
 
-    const [notificationSound] = useState(new Audio('/websocket-client/public/notification.mp3'));
-
-    const playNotificationSound = () => {
-        notificationSound.play();
-    };
-
-
     useEffect(() => {
         socket.on('message', (message) => {
             setMessages((prevMessages) => [...prevMessages, message]);
-            playNotificationSound(); // Play notification sound on message reception
         });
 
         socket.on('typing', (username) => {
@@ -94,7 +83,7 @@ const Chat = () => {
                     type="text"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    onKeyPress={playNotificationSound}
+                    onKeyPress={handleTyping}
                 />
                 <button type="submit">Send</button>
             </form>
