@@ -36,6 +36,7 @@ const Chat = () => {
     const [messages, setMessages] = useState([]);
     const [typingUser, setTypingUser] = useState('');
 
+    console.log(messages);
     useEffect(() => {
         socket.on('message', (message) => {
             setMessages((prevMessages) => [...prevMessages, message]);
